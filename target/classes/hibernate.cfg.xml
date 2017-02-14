@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sakila</property>
+		<property name="show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<mapping class="com.project.moviestore.model.Actor" />
+		<mapping class="com.project.moviestore.model.ActorInfo" />
+		<mapping class="com.project.moviestore.model.ActorInfoId" />
+		<mapping class="com.project.moviestore.model.Address" />
+		<mapping class="com.project.moviestore.model.Category" />
+		<mapping class="com.project.moviestore.model.City" />
+		<mapping class="com.project.moviestore.model.Country" />
+		<mapping class="com.project.moviestore.model.Customer" />
+		<mapping class="com.project.moviestore.model.CustomerList" />
+		<mapping class="com.project.moviestore.model.CustomerListId" />
+		<mapping class="com.project.moviestore.model.Film" />
+		<mapping class="com.project.moviestore.model.FilmActor" />
+		<mapping class="com.project.moviestore.model.FilmActorId" />
+		<mapping class="com.project.moviestore.model.FilmCategory" />
+		<mapping class="com.project.moviestore.model.FilmCategoryId" />
+		<mapping class="com.project.moviestore.model.FilmList" />
+		<mapping class="com.project.moviestore.model.FilmListId" />
+		<mapping class="com.project.moviestore.model.FilmText" />
+		<mapping class="com.project.moviestore.model.Inventory" />
+		<mapping class="com.project.moviestore.model.Language" />
+		<mapping class="com.project.moviestore.model.NicerButSlowerFilmList" />
+		<mapping class="com.project.moviestore.model.NicerButSlowerFilmListId" />
+		<mapping class="com.project.moviestore.model.Payment" />
+		<mapping class="com.project.moviestore.model.Rental" />
+		<mapping class="com.project.moviestore.model.SalesByFilmCategory" />
+		<mapping class="com.project.moviestore.model.SalesByFilmCategoryId" />
+		<mapping class="com.project.moviestore.model.SalesByStore" />
+		<mapping class="com.project.moviestore.model.SalesByStoreId" />
+		<mapping class="com.project.moviestore.model.Sampleview" />
+		<mapping class="com.project.moviestore.model.SampleviewId" />
+		<mapping class="com.project.moviestore.model.Staff" />
+		<mapping class="com.project.moviestore.model.StaffList" />
+		<mapping class="com.project.moviestore.model.StaffListId" />
+		<mapping class="com.project.moviestore.model.Store" />
+		<mapping class="com.project.moviestore.model.Dummy" />
+	</session-factory>
+</hibernate-configuration>
