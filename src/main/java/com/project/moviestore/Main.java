@@ -2,18 +2,16 @@ package com.project.moviestore;
 
 import java.io.IOException;
 import java.net.URI;
-import java.util.Iterator;
-import java.util.List;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Restrictions;
 
 import com.project.moviestore.model.Actor;
-import com.project.moviestore.model.Dummy;
-import com.project.moviestore.utilities.HibernateUtil;
+import com.project.moviestore.model.BaseModel;
+import com.project.moviestore.model.City;
 
 /**
  * Main class.
@@ -50,15 +48,21 @@ public class Main {
 //        server.stop();
     	
     	
-    	Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-		session.beginTransaction();
-		
-		Criteria cr = session.createCriteria(Dummy.class);
-		//cr.add(Restrictions.eq("level", "Easy"));
-		List actors = cr.list();
-		System.out.println(actors.size());
-		//session.getTransaction().commit();
-		HibernateUtil.getSessionFactory().close();
+//    	Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+//		session.beginTransaction();
+//		
+//		Criteria cr = session.createCriteria(Actor.class);
+//		cr.add(Restrictions.eq("firstName", "PENELOPE"));
+//		List actors = cr.list();
+//		System.out.println(actors.size());
+//		//session.getTransaction().commit();
+//		HibernateUtil.getSessionFactory().close();
+    	
+    	Criterion cr = Restrictions.conjunction().add(Restrictions.eq("firstName", "PENELOPE"));
+    	Criterion cr1 = Restrictions.conjunction().add(Restrictions.eq("city", "Acua"));
+
+    	System.out.println(BaseModel.getInstance().findByCriteria(Actor.class, cr).size());
+    	System.out.println(BaseModel.getInstance().findByCriteria(City.class, cr1).size());
     	
     }
 }
