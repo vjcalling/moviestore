@@ -41,11 +41,11 @@ public class Main {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-//        final HttpServer server = startServer();
-//        System.out.println(String.format("Jersey app started with WADL available at "
-//                + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
-//        System.in.read();
-//        server.stop();
+        final HttpServer server = startServer();
+        System.out.println(String.format("Jersey app started with WADL available at "
+                + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
+        System.in.read();
+        server.stop();
     	
     	
 //    	Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -58,11 +58,11 @@ public class Main {
 //		//session.getTransaction().commit();
 //		HibernateUtil.getSessionFactory().close();
     	
-    	Criterion cr = Restrictions.conjunction().add(Restrictions.eq("firstName", "PENELOPE"));
-    	Criterion cr1 = Restrictions.conjunction().add(Restrictions.eq("city", "Acua"));
-
-    	System.out.println(BaseModel.getInstance().findByCriteria(Actor.class, cr).size());
-    	System.out.println(BaseModel.getInstance().findByCriteria(City.class, cr1).size());
+//    	Criterion cr = Restrictions.conjunction().add(Restrictions.eq("firstName", "PENELOPE"));
+//    	Criterion cr1 = Restrictions.conjunction().add(Restrictions.eq("city", "Acua"));
+//
+//    	System.out.println(BaseModel.getInstance().findByCriteria(Actor.class, cr).size());
+//    	System.out.println(BaseModel.getInstance().findByCriteria(City.class, cr1).size());
     	
     }
 }
